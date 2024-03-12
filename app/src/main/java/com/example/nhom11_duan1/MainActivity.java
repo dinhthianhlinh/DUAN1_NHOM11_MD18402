@@ -12,7 +12,7 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
 
-
+     //vgfcghbhjboj
         // linh đẩy lên
         //linhday làn 2
     }
