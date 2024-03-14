@@ -23,6 +23,7 @@ import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 
 public class LoginActivity extends AppCompatActivity {
+    Button btnLogin;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -32,7 +33,7 @@ public class LoginActivity extends AppCompatActivity {
         TextInputLayout txtEmail = findViewById(R.id.txtEmail);
         TextInputEditText edtPass = findViewById(R.id.edtPass);
         TextInputLayout txtPass = findViewById(R.id.txtPass);
-        Button btnLogin = findViewById(R.id.btnLogin);
+        btnLogin = findViewById(R.id.btnLogin);
         CheckBox cboRemeber = findViewById(R.id.cboRemember);
         TextView tvQuenMK = findViewById(R.id.tvQuenMK);
         TextView tvDangKy = findViewById(R.id.tvDangKy);
@@ -57,9 +58,7 @@ public class LoginActivity extends AppCompatActivity {
                     }
 
 
-                } else {
-                    Intent intent = new Intent(LoginActivity.this, HomeActivity.class);
-                    startActivity(intent);
+
                 }
                 loginAccountInFireBase(email,pass);
             }
@@ -138,19 +137,28 @@ public class LoginActivity extends AppCompatActivity {
     }
     void loginAccountInFireBase(String email,String pass){
         FirebaseAuth  firebaseAuth = FirebaseAuth.getInstance();
+
         firebaseAuth.signInWithEmailAndPassword(email,pass).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
             @Override
             public void onComplete(@NonNull Task<AuthResult> task) {
+                changeInprogress(false);
                 if(task.isSuccessful()){
-                    if(firebaseAuth.getCurrentUser().isEmailVerified()){
+//                    if(firebaseAuth.getCurrentUser().isEmailVerified()){
                         startActivity(new Intent(LoginActivity.this,HomeActivity.class));
-                    }else {
-                        Utility.showToast(LoginActivity.this,"Email không tồn tại vui lòng kiểm tra lại Email");
-                    }
+//                    }else {
+//                        Utility.showToast(LoginActivity.this,"Email không tồn tại vui lòng kiểm tra lại Email");
+//                    }
                 }else{
                     Utility.showToast(LoginActivity.this,task.getException().getLocalizedMessage());
                 }
             }
         });
+    }
+    void changeInprogress(boolean inProgress){
+        if(inProgress){
+            btnLogin.setVisibility(View.GONE);
+        }else{
+            btnLogin.setVisibility(View.VISIBLE);
+        }
     }
 }

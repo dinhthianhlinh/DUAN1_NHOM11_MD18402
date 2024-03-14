@@ -2,7 +2,12 @@ package com.example.nhom11_duan1;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.os.Handler;
+
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -12,8 +17,17 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
 
-     //vgfcghbhjboj
-        // linh đẩy lên
-        //linhday làn 2
+     new Handler().postDelayed(new Runnable() {
+         @Override
+         public void run() {
+             FirebaseUser firebaseUser = FirebaseAuth.getInstance().getCurrentUser();
+             if(firebaseUser == null){
+                 startActivity(new Intent(MainActivity.this,LoginActivity.class));
+             }else{
+                 startActivity(new Intent(MainActivity.this,HomeActivity.class));
+             }
+             finish();
+         }
+     },3000);
     }
 }
