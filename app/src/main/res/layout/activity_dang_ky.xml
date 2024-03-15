@@ -40,7 +40,8 @@
             android:id="@+id/edtPass"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="Nhập password"/>
+            android:hint="Nhập password"
+            android:password="true"/>
     </com.google.android.material.textfield.TextInputLayout>
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/txtRePass"
@@ -51,7 +52,8 @@
             android:id="@+id/edtRePass"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="Nhập lại password"/>
+            android:hint="Nhập lại password"
+            android:password="true"/>
     </com.google.android.material.textfield.TextInputLayout>
     <Button
         android:id="@+id/btnDangKy"

@@ -47,7 +47,7 @@ public class LoginActivity extends AppCompatActivity {
                 if (email.equals("") || pass.equals("")) {
 
                     if (email.equals("")) {
-                        txtEmail.setError("Vui Lòng Nhập UserName");
+                        txtEmail.setError("Vui Lòng Nhập Email");
                     } else {
                         txtEmail.setError(null);
                     }
@@ -143,11 +143,11 @@ public class LoginActivity extends AppCompatActivity {
             public void onComplete(@NonNull Task<AuthResult> task) {
                 changeInprogress(false);
                 if(task.isSuccessful()){
-                    if(firebaseAuth.getCurrentUser().isEmailVerified()){
+//                    if(firebaseAuth.getCurrentUser().isEmailVerified()){
                         startActivity(new Intent(LoginActivity.this,HomeActivity.class));
-                    }else {
-                        Utility.showToast(LoginActivity.this,"Email không tồn tại vui lòng kiểm tra lại Email");
-                    }
+//                    }else {
+//                        Utility.showToast(LoginActivity.this,"Email không tồn tại vui lòng kiểm tra lại Email");
+//                    }
                 }else{
                     Utility.showToast(LoginActivity.this,task.getException().getLocalizedMessage());
                 }
