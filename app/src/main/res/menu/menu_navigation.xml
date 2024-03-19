@@ -22,8 +22,5 @@
     <item android:id="@+id/six"
         android:icon="@drawable/six"
         android:title="quan ly danh muc"/>
-    <item android:id="@+id/sisx"
-        android:icon="@drawable/six"
-        android:title="quan ly danh muc"/>
 
 </menu>
