@@ -41,6 +41,14 @@ public class LoginActivity extends AppCompatActivity {
         btnLogin.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                Intent intent = new Intent(LoginActivity.this,trangchumenu.class);
+                startActivity(intent);
+            }
+        });
+
+        btnLogin.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
                 String email = edtEmail.getText().toString().trim();
                 String pass = edtPass.getText().toString();
 
@@ -144,7 +152,7 @@ public class LoginActivity extends AppCompatActivity {
                 changeInprogress(false);
                 if(task.isSuccessful()){
 //                    if(firebaseAuth.getCurrentUser().isEmailVerified()){
-                        startActivity(new Intent(LoginActivity.this,HomeActivity.class));
+                        startActivity(new Intent(LoginActivity.this,trangchumenu.class));
 //                    }else {
 //                        Utility.showToast(LoginActivity.this,"Email không tồn tại vui lòng kiểm tra lại Email");
 //                    }
