@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:id="@+id/one"
+        android:title="Quản lý khach hang"
+        android:icon="@drawable/one"/>
+
+    <item android:id="@+id/two"
+        android:icon="@drawable/two"
+        android:title="quan ly san pham"/>
+    <item android:id="@+id/thre"
+        android:icon="@drawable/three"
+        android:title="thong ke"/>
+
+    <item android:id="@+id/four"
+        android:icon="@drawable/four"
+        android:title="quan ly don hang"/>
+
+    <item android:id="@+id/five"
+        android:icon="@drawable/five"
+        android:title="quan ly danh sasch danh gia "/>
+
+    <item android:id="@+id/six"
+        android:icon="@drawable/six"
+        android:title="quan ly danh muc"/>
+    <item android:id="@+id/sisx"
+        android:icon="@drawable/six"
+        android:title="quan ly danh muc"/>
+
+</menu>
