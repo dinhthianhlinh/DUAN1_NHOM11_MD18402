@@ -11,11 +11,11 @@ import androidx.fragment.app.Fragment;
 
 import com.example.nhom11_duan1.R;
 
-public class fragment_four extends Fragment {
+public class fragment_QuanLyDanhMuc extends Fragment {
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        View view = inflater.inflate(R.layout.four,container,false);
+        View view = inflater.inflate(R.layout.quanhlydanhmuc,container,false);
 
         ///code
 

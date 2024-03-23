@@ -11,11 +11,11 @@ import androidx.fragment.app.Fragment;
 
 import com.example.nhom11_duan1.R;
 
-public class fragment_thre extends Fragment {
+public class fragment_QuanLyDonHang extends Fragment {
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        View view = inflater.inflate(R.layout.thre,container,false);
+        View view = inflater.inflate(R.layout.quanlydonhang,container,false);
 
         ///code
 

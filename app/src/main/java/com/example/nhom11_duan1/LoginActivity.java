@@ -64,9 +64,6 @@ public class LoginActivity extends AppCompatActivity {
                     } else {
                         txtPass.setError(null);
                     }
-
-
-
                 }
                 loginAccountInFireBase(email,pass);
             }

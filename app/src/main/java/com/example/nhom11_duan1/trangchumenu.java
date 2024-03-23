@@ -10,14 +10,12 @@ import androidx.fragment.app.Fragment;
 import android.os.Bundle;
 import android.view.MenuItem;
 
-import com.example.nhom11_duan1.fragment.fragment_one;
-import com.example.nhom11_duan1.fragment.fragment_five;
-import com.example.nhom11_duan1.fragment.fragment_four;
-import com.example.nhom11_duan1.fragment.fragment_one;
-import com.example.nhom11_duan1.fragment.fragment_six;
-import com.example.nhom11_duan1.fragment.fragment_thre;
-import com.example.nhom11_duan1.fragment.fragment_thre;
-import com.example.nhom11_duan1.fragment.fragment_two;
+import com.example.nhom11_duan1.fragment.fragment_quanLyKhachHang;
+import com.example.nhom11_duan1.fragment.fragment_QuanLyDanhSach;
+import com.example.nhom11_duan1.fragment.fragment_QuanLyDonHang;
+import com.example.nhom11_duan1.fragment.fragment_QuanLyDanhMuc;
+import com.example.nhom11_duan1.fragment.fragment_ThongKe;
+import com.example.nhom11_duan1.fragment.fragment_QuanLySanPham;
 import com.google.android.material.navigation.NavigationView;
 
 public class trangchumenu extends AppCompatActivity {
@@ -43,21 +41,21 @@ public class trangchumenu extends AppCompatActivity {
             @Override
             public boolean onNavigationItemSelected(@NonNull MenuItem item) {
                 Fragment fragment =null;
-                if (item.getItemId()==R.id.one){
-                    fragment = new fragment_one();
-                }else if(item.getItemId()==R.id.two){
-                    fragment = new fragment_two();
-                }else if(item.getItemId()==R.id.thre){
-                    fragment = new fragment_thre();
-                }else if (item.getItemId()==R.id.four){
-                    fragment = new fragment_four();
-                }else if (item.getItemId()==R.id.five){
-                    fragment = new fragment_five();
+                if (item.getItemId()==R.id.quanLyKhachHang){
+                    fragment = new fragment_quanLyKhachHang();
+                }else if(item.getItemId()==R.id.quanLySanPham){
+                    fragment = new fragment_QuanLySanPham();
+                }else if(item.getItemId()==R.id.thongKe){
+                    fragment = new fragment_ThongKe();
+                }else if (item.getItemId()==R.id.quanLyDonHang){
+                    fragment = new fragment_QuanLyDonHang();
+                }else if (item.getItemId()==R.id.quanLyDanhSach){
+                    fragment = new fragment_QuanLyDanhSach();
                 }
-                else if (item.getItemId()==R.id.six){
-                    fragment = new fragment_six();
+                else if (item.getItemId()==R.id.quanLyDanhMuc){
+                    fragment = new fragment_QuanLyDanhMuc();
                 }else {
-                    fragment = new fragment_one();
+                    fragment = new fragment_quanLyKhachHang();
                 }
 
                 getSupportFragmentManager()
