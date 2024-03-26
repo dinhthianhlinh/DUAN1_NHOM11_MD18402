@@ -53,25 +53,12 @@ public class AddSanPhamActivity extends AppCompatActivity {
         edtTenSP.setText(tenSP);
         edtGiaSP.setText(String.valueOf(giaSP)); // Chuyển số nguyên thành chuỗi trước khi đặt giá trị
         edtMoTaSP.setText(motaSP);
-        btnBackSP.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                // Lấy ra FragmentManager
-                FragmentManager fragmentManager = getSupportFragmentManager();
-
-                // Bắt đầu một FragmentTransaction
-                FragmentTransaction transaction = fragmentManager.beginTransaction();
-
-                // Thực hiện việc thêm hoặc thay thế fragment_QuanLySanPham
-                fragment_QuanLySanPham fragment = new fragment_QuanLySanPham();
-                transaction.replace(R.id.quanLySanPham, fragment); // R.id.fragment_container là id của layout chứa fragment
-
-                // Kết thúc giao dịch và áp dụng các thay đổi
-                transaction.commit();
-            }
+        btnBackSP.setOnClickListener(v -> {
+            onBackPressed();
         });
 
         if(docID!= null && !docID.isEmpty()){
+
             isEditMode = true;
         }
         if(isEditMode){

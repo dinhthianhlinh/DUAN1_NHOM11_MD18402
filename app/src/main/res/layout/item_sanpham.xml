@@ -3,40 +3,48 @@
     android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="wrap_content">
-    <TextView
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Tên Sản Phẩm"
-        android:id="@+id/tvTenSP"
-        android:textSize="22sp"
-        android:layout_marginVertical="4dp"/>
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Giá Sản Phẩm"
-        android:id="@+id/tvGiaSP"
-        android:textSize="18sp"
-        android:layout_marginVertical="4dp"/>
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Mô Tả Sản Phẩm"
-        android:id="@+id/tvMoTaSP"
-        android:textSize="18sp"
-        android:layout_marginVertical="4dp"/>
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Hãng Sản Phẩm"
-        android:id="@+id/tvHangSP"
-        android:textSize="18sp"
-        android:layout_marginVertical="4dp"/>
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Hãng Sản Phẩm"
-        android:id="@+id/tvTimestamp"
-        android:textSize="18sp"
-        android:layout_marginVertical="4dp"/>
+        android:orientation="vertical"
+        android:background="@drawable/bogoc"
+        android:layout_marginBottom="20sp">
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Tên Sản Phẩm"
+            android:id="@+id/tvTenSP"
+            android:textSize="22sp"
+            android:layout_marginVertical="4dp"/>
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Giá Sản Phẩm"
+            android:id="@+id/tvGiaSP"
+            android:textSize="18sp"
+            android:layout_marginVertical="4dp"/>
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Mô Tả Sản Phẩm"
+            android:id="@+id/tvMoTaSP"
+            android:textSize="18sp"
+            android:layout_marginVertical="4dp"/>
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Hãng Sản Phẩm"
+            android:id="@+id/tvHangSP"
+            android:textSize="18sp"
+            android:layout_marginVertical="4dp"/>
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Hãng Sản Phẩm"
+            android:id="@+id/tvTimestamp"
+            android:textSize="18sp"
+            android:layout_marginVertical="4dp"/>
+
+    </LinearLayout>
 
 </LinearLayout>

@@ -55,17 +55,5 @@
         android:backgroundTint="@color/black"
         android:text="Đăng Nhập">
     </Button>
-    <TextView
-        android:id="@+id/tvQuenMK"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Bạn Không Nhớ Mật Khẩu ?">
-    </TextView>
-    <TextView
-        android:id="@+id/tvDangKy"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Bạn Chưa Có Tài Khoản ?">
-    </TextView>
 
 </LinearLayout>

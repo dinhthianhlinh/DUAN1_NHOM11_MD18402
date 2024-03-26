@@ -35,8 +35,6 @@ public class LoginActivity extends AppCompatActivity {
         TextInputLayout txtPass = findViewById(R.id.txtPass);
         btnLogin = findViewById(R.id.btnLogin);
         CheckBox cboRemeber = findViewById(R.id.cboRemember);
-        TextView tvQuenMK = findViewById(R.id.tvQuenMK);
-        TextView tvDangKy = findViewById(R.id.tvDangKy);
 
         btnLogin.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -64,28 +62,13 @@ public class LoginActivity extends AppCompatActivity {
                     } else {
                         txtPass.setError(null);
                     }
+                }else if(email.equals("sonntph38782@fpt.edu.vn") || pass.equals("ph38782")){
+                    startActivity(new Intent(LoginActivity.this, trangchumenu.class));
+                }else if(email.equals("linhdtaph35049@fpt.edu.vn") || pass.equals("ph35049")) {
+                    startActivity(new Intent(LoginActivity.this, trangchumenu.class));
                 }
-                loginAccountInFireBase(email,pass);
             }
         });
-        tvDangKy.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(LoginActivity.this,DangKyActivity.class);
-                startActivity(intent);
-            }
-        });
-        tvQuenMK.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(LoginActivity.this,ForgetActivity.class);
-                startActivity(intent);
-            }
-        });
-
-
-
-
         edtPass.addTextChangedListener(new TextWatcher() {
             @Override
             public void beforeTextChanged(CharSequence s, int start, int count, int after) {
@@ -140,25 +123,7 @@ public class LoginActivity extends AppCompatActivity {
     public boolean isValidEmail(CharSequence target) {
         return (!TextUtils.isEmpty(target) && Patterns.EMAIL_ADDRESS.matcher(target).matches());
     }
-    void loginAccountInFireBase(String email,String pass){
-        FirebaseAuth  firebaseAuth = FirebaseAuth.getInstance();
 
-        firebaseAuth.signInWithEmailAndPassword(email,pass).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
-            @Override
-            public void onComplete(@NonNull Task<AuthResult> task) {
-                changeInprogress(false);
-                if(task.isSuccessful()){
-//                    if(firebaseAuth.getCurrentUser().isEmailVerified()){
-                        startActivity(new Intent(LoginActivity.this,trangchumenu.class));
-//                    }else {
-//                        Utility.showToast(LoginActivity.this,"Email không tồn tại vui lòng kiểm tra lại Email");
-//                    }
-                }else{
-                    Utility.showToast(LoginActivity.this,task.getException().getLocalizedMessage());
-                }
-            }
-        });
-    }
     void changeInprogress(boolean inProgress){
         if(inProgress){
             btnLogin.setVisibility(View.GONE);

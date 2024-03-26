@@ -38,6 +38,7 @@ public class fragment_QuanLySanPham extends Fragment {
                 getActivity().startActivity(intent);
             }
         });
+
         recyclerView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
