@@ -1,12 +1,10 @@
 package com.example.nhom11_duan1.fragment;
 
-import android.app.DownloadManager;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.app.DownloadManager;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -16,12 +14,9 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.nhom11_duan1.Adapter.SanPhamAdapter;
 import com.example.nhom11_duan1.AddSanPhamActivity;
-import com.example.nhom11_duan1.DangKyActivity;
-import com.example.nhom11_duan1.LoginActivity;
 import com.example.nhom11_duan1.R;
-import com.example.nhom11_duan1.SanPham;
+import com.example.nhom11_duan1.DTO.SanPham;
 import com.example.nhom11_duan1.Utility;
-import com.firebase.ui.firestore.FirestoreRecyclerAdapter;
 import com.firebase.ui.firestore.FirestoreRecyclerOptions;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.firebase.firestore.Query;
@@ -75,3 +70,4 @@ public class fragment_QuanLySanPham extends Fragment {
         sanPhamAdapter.notifyDataSetChanged();
     }
 }
+//123

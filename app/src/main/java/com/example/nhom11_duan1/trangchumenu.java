@@ -41,27 +41,36 @@ public class trangchumenu extends AppCompatActivity {
             @Override
             public boolean onNavigationItemSelected(@NonNull MenuItem item) {
                 Fragment fragment =null;
-                if (item.getItemId()==R.id.quanLyKhachHang){
+                DrawerLayout drawerLayout = findViewById(R.id.DrawerLayout1); // Lấy tham chiếu của DrawerLayout
+
+                if (item.getItemId() == R.id.quanLyKhachHang) {
                     fragment = new fragment_quanLyKhachHang();
-                }else if(item.getItemId()==R.id.quanLySanPham){
+                } else if (item.getItemId() == R.id.quanLySanPham) {
                     fragment = new fragment_QuanLySanPham();
-                }else if(item.getItemId()==R.id.thongKe){
+                } else if (item.getItemId() == R.id.thongKe) {
                     fragment = new fragment_ThongKe();
-                }else if (item.getItemId()==R.id.quanLyDonHang){
+                } else if (item.getItemId() == R.id.quanLyDonHang) {
                     fragment = new fragment_QuanLyDonHang();
-                }else if (item.getItemId()==R.id.quanLyDanhSach){
+                } else if (item.getItemId() == R.id.quanLyDanhSach) {
                     fragment = new fragment_QuanLyDanhSach();
-                }
-                else if (item.getItemId()==R.id.quanLyDanhMuc){
+                } else if (item.getItemId() == R.id.quanLyDanhMuc) {
                     fragment = new fragment_QuanLyDanhMuc();
-                }else {
+                } else {
                     fragment = new fragment_quanLyKhachHang();
                 }
 
                 getSupportFragmentManager()
                         .beginTransaction()
-                        .replace(R.id.linearlayout,fragment)
+                        .replace(R.id.linearlayout, fragment)
                         .commit();
+
+                drawerLayout.closeDrawer(GravityCompat.START); // Đóng thanh bar sau khi chọn mục menu
+
+
+//                getSupportFragmentManager()
+//                        .beginTransaction()
+//                        .replace(R.id.linearlayout,fragment)
+//                        .commit();
 
 
                 return false;
