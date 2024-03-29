@@ -58,7 +58,7 @@ public class AddSanPhamActivity extends AppCompatActivity {
         });
 
         if(docID!= null && !docID.isEmpty()){
-
+//123
             isEditMode = true;
         }
         if(isEditMode){
