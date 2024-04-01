@@ -66,7 +66,9 @@ public class LoginActivity extends AppCompatActivity {
                     startActivity(new Intent(LoginActivity.this, trangchumenu.class));
                 }else if(email.equals("linhdtaph35049@fpt.edu.vn") || pass.equals("ph35049")) {
                     startActivity(new Intent(LoginActivity.this, trangchumenu.class));
-                }
+                }else if(email.equals("phongngph44945@fpt.edu.vn") || pass.equals("ph44945")) {
+                startActivity(new Intent(LoginActivity.this, trangchumenu.class));
+            }
             }
         });
         edtPass.addTextChangedListener(new TextWatcher() {
