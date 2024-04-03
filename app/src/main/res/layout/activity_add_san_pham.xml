@@ -5,7 +5,7 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:padding="16dp"
-        android:background="#A5D66C"
+        android:background="@drawable/may2"
         tools:context=".AddSanPhamActivity">
         <RelativeLayout
             android:layout_width="match_parent"
@@ -46,15 +46,15 @@
             android:orientation="vertical"
             android:padding="16dp"
             android:layout_marginVertical="25dp"
-            android:backgroundTint="@color/white"
-            android:background="@color/white">
+            android:backgroundTint="#6ACAD6"
+            android:background="@drawable/vien">
 
             <ImageView
                 android:id="@+id/img2"
                 android:layout_width="match_parent"
                 android:layout_height="200dp"
                  android:padding="10dp"
-                android:src="#9F4A4A" />
+                android:src="@drawable/iphone__ky2k6x5u6vue_og" />
 
             <EditText
                 android:layout_width="match_parent"
@@ -107,7 +107,8 @@
         android:text="Xóa Sản Phẩm"
         android:gravity="center"
         android:id="@+id/tvDelete"
+        android:background="@drawable/vien"
         android:textSize="18sp"
-        android:textColor="#FF0000"/>
+        android:textColor="#DD6A6A"/>
 
     </RelativeLayout>
