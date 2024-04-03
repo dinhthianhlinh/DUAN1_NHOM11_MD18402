@@ -5,7 +5,7 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:padding="16dp"
-        android:background="@drawable/may2"
+        android:background="@drawable/may4"
         tools:context=".AddSanPhamActivity">
         <RelativeLayout
             android:layout_width="match_parent"
@@ -24,6 +24,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:id="@+id/tvAddSP"
+                android:textColor="#B84747"
                 android:text="Thêm Sản Phẩm"
                 android:layout_centerVertical="true"
                 android:layout_centerHorizontal="true"
@@ -46,7 +47,7 @@
             android:orientation="vertical"
             android:padding="16dp"
             android:layout_marginVertical="25dp"
-            android:backgroundTint="#6ACAD6"
+            android:backgroundTint="#C6E6EA"
             android:background="@drawable/vien">
 
             <ImageView
@@ -65,12 +66,14 @@
                 android:textStyle="bold"
                 android:layout_marginVertical="8dp"
                 android:padding="12dp"
+                android:background="@drawable/custom_edittex"
                 android:textColor="@color/black"/>
             <EditText
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:id="@+id/edtGiaSP"
                 android:hint="Nhập Giá Sản Phẩm"
+                android:background="@drawable/custom_edittex"
                 android:textSize="20sp"
                 android:textStyle="bold"
                 android:layout_marginVertical="8dp"
@@ -81,6 +84,7 @@
                 android:layout_height="wrap_content"
                 android:id="@+id/edtMoTaSP"
                 android:hint="Mô Tả Sản Phẩm"
+                android:background="@drawable/custom_edittex"
                 android:textSize="10sp"
                 android:textStyle="bold"
                 android:layout_marginVertical="8dp"

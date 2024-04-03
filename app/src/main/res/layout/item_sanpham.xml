@@ -2,27 +2,29 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="vertical"
     android:layout_width="match_parent"
-    android:layout_height="600dp"
-    android:background="@drawable/may"
-    android:layout_margin="30dp"
-    android:gravity="center">
+    android:layout_height="wrap_content"
+    android:paddingHorizontal="20dp"
 
-
+    android:layout_margin="10dp"
+    android:background="@drawable/vien"
+    >
 
         <!-- Header -->
         <ImageView
-            android:layout_width="200dp"
-            android:layout_height="150dp"
-            android:src="@drawable/iphone__ky2k6x5u6vue_og"/>
+            android:layout_width="match_parent"
+            android:layout_height="200dp"
+            android:paddingTop="10dp"
+            android:src="@drawable/iphone__ky2k6x5u6vue_og"
+            android:scaleType="centerCrop"
+            android:layout_marginBottom="16dp"/>
 
         <!-- Tên sản phẩm -->
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Tên sản phẩm :"
-            android:textSize="20dp"
-            android:textStyle="bold"
-            android:padding="5dp"/>
+            android:textSize="20sp"
+            android:textStyle="bold"/>
 
         <TextView
             android:id="@+id/tvTenSP"
@@ -30,18 +32,18 @@
             android:layout_height="wrap_content"
             android:text="Tên Sản Phẩm"
             android:textColor="#EDEDED"
-            android:textSize="25sp"
-            android:background="@drawable/vien"
-            android:padding="10dp"/>
+            android:textSize="20sp"
+            android:background="@drawable/vientron2"
+            android:padding="10dp"
+            android:layout_marginBottom="16dp"/>
 
         <!-- Giá sản phẩm -->
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Giá sản phẩm :"
-            android:textSize="20dp"
-            android:textStyle="bold"
-            android:padding="5dp"/>
+            android:textSize="20sp"
+            android:textStyle="bold"/>
 
         <TextView
             android:id="@+id/tvGiaSP"
@@ -49,17 +51,17 @@
             android:layout_height="wrap_content"
             android:text="Giá Sản Phẩm"
             android:textSize="20sp"
-            android:background="@drawable/vien"
-            android:padding="10dp"/>
+            android:background="@drawable/vientron2"
+            android:padding="10dp"
+            android:layout_marginBottom="16dp"/>
 
         <!-- Mô tả sản phẩm -->
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Mô tả sản phẩm :"
-            android:textSize="20dp"
-            android:textStyle="bold"
-            android:padding="5dp"/>
+            android:textSize="20sp"
+            android:textStyle="bold"/>
 
         <TextView
             android:id="@+id/tvMoTaSP"
@@ -67,17 +69,17 @@
             android:layout_height="wrap_content"
             android:text="Mô Tả Sản Phẩm"
             android:textSize="20sp"
-            android:background="@drawable/vien"
-            android:padding="10dp"/>
+            android:background="@drawable/vientron2"
+            android:padding="10dp"
+            android:layout_marginBottom="16dp"/>
 
         <!-- Hãng sản phẩm -->
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Hãng sản phẩm :"
-            android:textSize="20dp"
-            android:textStyle="bold"
-            android:padding="5dp"/>
+            android:textSize="20sp"
+            android:textStyle="bold"/>
 
         <TextView
             android:id="@+id/tvHangSP"
@@ -85,17 +87,17 @@
             android:layout_height="wrap_content"
             android:text="Hãng Sản Phẩm"
             android:textSize="20sp"
-            android:background="@drawable/vien"
-            android:padding="10dp"/>
+            android:background="@drawable/vientron2"
+            android:padding="10dp"
+            android:layout_marginBottom="16dp"/>
 
         <!-- Ngày mua hàng -->
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Ngày mua hàng :"
-            android:textSize="20dp"
-            android:textStyle="bold"
-            android:padding="5dp"/>
+            android:textSize="20sp"
+            android:textStyle="bold"/>
 
         <TextView
             android:id="@+id/tvTimestamp"
@@ -103,9 +105,8 @@
             android:layout_height="wrap_content"
             android:text="thoi gian mua"
             android:textSize="20sp"
-            android:background="@drawable/vien"
+            android:background="@drawable/vientron2"
+            android:layout_marginBottom="40dp"
             android:padding="10dp"/>
 
-    </LinearLayout>
-
-
+</LinearLayout>

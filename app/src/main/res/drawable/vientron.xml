@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<shape xmlns:android="http://schemas.android.com/apk/res/android">
+    <solid android:color="#B60F0F"/> <!-- Màu nền của hình chữ nhật -->
+    <corners android:radius="0dp"/> <!-- Đặt bán kính bo tròn của góc thành 0 để không có viền tròn -->
+</shape>

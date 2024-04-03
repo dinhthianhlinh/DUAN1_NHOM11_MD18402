@@ -22,7 +22,7 @@
             android:text="Login now to experience"
             android:textStyle="bold"
             android:textSize="20sp"
-            android:textColor="#FFFFFF"
+            android:textColor="#F49F21"
             android:layout_marginTop="20dp"
             android:layout_marginBottom="40dp"/>
 
@@ -38,7 +38,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:hint="Nhập Email"
-                    android:background="#F3F5F6"
+                    android:background="@drawable/vientron2"
                     android:textStyle="bold"/>
         </com.google.android.material.textfield.TextInputLayout>
 
@@ -55,7 +55,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:hint="Nhập password"
-                    android:background="#F6F9FB"
+                    android:background="@drawable/vientron2"
                     android:password="true"
                     android:textStyle="bold"/>
         </com.google.android.material.textfield.TextInputLayout>
@@ -71,12 +71,13 @@
 
         <Button
             android:id="@+id/btnLogin"
-            android:layout_width="match_parent"
+            android:layout_width="150dp"
             android:layout_height="wrap_content"
             android:text="Đăng Nhập"
             android:textColor="#FFFFFF"
+
             android:textStyle="bold"
-            android:backgroundTint="#B84747"
+            android:backgroundTint="#6AB9DD"
             android:layout_marginStart="20dp"
             android:layout_marginEnd="20dp"
             android:layout_marginTop="20dp"/>
