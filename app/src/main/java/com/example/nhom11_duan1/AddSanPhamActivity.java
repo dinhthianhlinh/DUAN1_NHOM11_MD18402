@@ -1,54 +1,64 @@
 package com.example.nhom11_duan1;
 
+import androidx.activity.result.ActivityResultLauncher;
+import androidx.activity.result.contract.ActivityResultContracts;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
 
+import android.app.Activity;
+import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ArrayAdapter;
+import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageButton;
+import android.widget.ImageView;
 import android.widget.Spinner;
 import android.widget.TextView;
 
 import com.example.nhom11_duan1.DTO.SanPham;
 import com.example.nhom11_duan1.fragment.fragment_QuanLySanPham;
+import com.github.dhaval2404.imagepicker.ImagePicker;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.Timestamp;
 import com.google.firebase.firestore.DocumentReference;
+import com.google.firebase.storage.UploadTask;
 
 import java.util.ArrayList;
 import java.util.List;
+
+import kotlin.Unit;
+import kotlin.jvm.functions.Function1;
 
 public class AddSanPhamActivity extends AppCompatActivity {
     EditText edtTenSP, edtGiaSP, edtMoTaSP;
     Spinner spinnerHangSP;
     ImageButton btnAddSP,btnBackSP;
     TextView tvAddSP,tvDelete;
+    Button btnAnhSP;
+    ImageView imgAnhSP;
     boolean isEditMode = false;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_add_san_pham);
-
-        edtTenSP = findViewById(R.id.edtTenSP);
-        edtGiaSP = findViewById(R.id.edtGiaSP);
-        edtMoTaSP = findViewById(R.id.edtMoTaSP);
-        spinnerHangSP = findViewById(R.id.spinnerHangSP); // Thay thế EditText bằng Spinner
-        btnAddSP = findViewById(R.id.btnimgAddSP);
-        tvAddSP = findViewById(R.id.tvAddSP);
-        tvDelete = findViewById(R.id.tvDelete);
-        btnBackSP = findViewById(R.id.btnBack);
-
+        anhxa();
         String tenSP = getIntent().getStringExtra("TenSP");
         int giaSP = getIntent().getIntExtra("giaSP", 0); // Sử dụng getIntExtra() để lấy số nguyên
         String motaSP = getIntent().getStringExtra("moTaSP");
         String hangSP = getIntent().getStringExtra("hangSP");
         String docID = getIntent().getStringExtra("docID");
+
+
+
+
 
         edtTenSP.setText(tenSP);
         edtGiaSP.setText(String.valueOf(giaSP)); // Chuyển số nguyên thành chuỗi trước khi đặt giá trị
@@ -90,6 +100,8 @@ public class AddSanPhamActivity extends AppCompatActivity {
         hangSPList.add("SamSung");
         hangSPList.add("Oppo");
         hangSPList.add("Xiaomi");
+        hangSPList.add("RealMe");
+        hangSPList.add("Asus");
 
 // Tạo ArrayAdapter và gán cho Spinner
         ArrayAdapter<String> hangSPAdapter = new ArrayAdapter<>(this, android.R.layout.simple_spinner_item, hangSPList);
@@ -129,7 +141,7 @@ public class AddSanPhamActivity extends AppCompatActivity {
                     }
                 }
 
-                SanPham sanPham = new SanPham(TenSP, hangSP, MoTaSP);
+                SanPham sanPham = new SanPham(TenSP,giaSP , hangSP, MoTaSP);
                 sanPham.settenSP(TenSP);
                 sanPham.setgiaSP(giaSP);
                 sanPham.sethangSP(hangSP);
@@ -155,8 +167,28 @@ public class AddSanPhamActivity extends AppCompatActivity {
                         }
                     }
                 });
+
             }
         });
+    }
+    void changeInprogress(boolean inProgress){
+        if(inProgress){
+            imgAnhSP.setVisibility(View.VISIBLE);
+            btnAnhSP.setVisibility(View.GONE);
+        }else{
+            imgAnhSP.setVisibility(View.GONE);
+            btnAnhSP.setVisibility(View.VISIBLE);
+        }
+    }
+    void anhxa(){
+        edtTenSP = findViewById(R.id.edtTenSP);
+        edtGiaSP = findViewById(R.id.edtGiaSP);
+        edtMoTaSP = findViewById(R.id.edtMoTaSP);
+        spinnerHangSP = findViewById(R.id.spinnerHangSP); // Thay thế EditText bằng Spinner
+        btnAddSP = findViewById(R.id.btnimgAddSP);
+        tvAddSP = findViewById(R.id.tvAddSP);
+        tvDelete = findViewById(R.id.tvDelete);
+        btnBackSP = findViewById(R.id.btnBack);
     }
 }
 //123

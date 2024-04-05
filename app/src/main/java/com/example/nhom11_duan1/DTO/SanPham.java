@@ -13,12 +13,11 @@ public class SanPham {
     public SanPham() {
     }
 
-    public SanPham(String tenSP, String hangSP, String moTaSP) {
+    public SanPham(String tenSP, int giaSP, String hangSP, String moTaSP) {
         this.tenSP = tenSP;
         this.giaSP = giaSP;
         this.hangSP = hangSP;
         this.moTaSP = moTaSP;
-
     }
 
     public String gettenSP() {

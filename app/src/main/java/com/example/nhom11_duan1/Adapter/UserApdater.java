@@ -25,8 +25,8 @@ public class UserApdater extends FirestoreRecyclerAdapter<User,UserApdater.UserV
     @Override
     protected void onBindViewHolder(@NonNull UserViewHolder holder, int position, @NonNull User model) {
         holder.tvUser.setText(model.getTen());
-        holder.tvEmail.setText(model.getEmail());
-        holder.tvPass.setText(model.getPass());
+        holder.tvEmail.setText(model.getPhone());
+        holder.tvPass.setText(model.getAdress());
 
     }
 

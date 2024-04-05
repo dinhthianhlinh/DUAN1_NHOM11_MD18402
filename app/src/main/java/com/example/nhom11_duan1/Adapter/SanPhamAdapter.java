@@ -2,9 +2,11 @@ package com.example.nhom11_duan1.Adapter;
 
 import android.content.Context;
 import android.content.Intent;
+import android.net.Uri;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
@@ -16,15 +18,19 @@ import com.example.nhom11_duan1.DTO.SanPham;
 import com.example.nhom11_duan1.Utility;
 import com.firebase.ui.firestore.FirestoreRecyclerAdapter;
 import com.firebase.ui.firestore.FirestoreRecyclerOptions;
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.Task;
 
 public class SanPhamAdapter extends FirestoreRecyclerAdapter<SanPham, SanPhamAdapter.SanPhamHolder> {
     Context context;
+
     public SanPhamAdapter(@NonNull FirestoreRecyclerOptions<SanPham> options,Context context) {
         super(options);
         this.context = context;
     }
     @Override
     protected void onBindViewHolder(@NonNull SanPhamHolder holder, int position, @NonNull SanPham sanPham) {
+
         holder.tvTenSP.setText(sanPham.tenSP);
         holder.tvGiaSP.setText(Integer.toString(sanPham.giaSP));
         holder.tvMoTaSP.setText(sanPham.moTaSP);
@@ -43,6 +49,15 @@ public class SanPhamAdapter extends FirestoreRecyclerAdapter<SanPham, SanPhamAda
                 context.startActivity(intent);
             }
         });
+        Utility.layAnh(getSnapshots().getSnapshot(position).getId()).getDownloadUrl().addOnCompleteListener(new OnCompleteListener<Uri>() {
+            @Override
+            public void onComplete(@NonNull Task<Uri> task) {
+                if (task.isSuccessful()){
+                    Uri uri = task.getResult();
+                    Utility.setAnh(context,uri,holder.imgSP);
+                }
+            }
+        });
     }
 
     @NonNull
@@ -54,6 +69,7 @@ public class SanPhamAdapter extends FirestoreRecyclerAdapter<SanPham, SanPhamAda
 
     public class SanPhamHolder extends RecyclerView.ViewHolder{
         TextView tvTenSP,tvGiaSP,tvMoTaSP,tvHangSP,tvTimeStamp;
+        ImageView imgSP;
         public SanPhamHolder(@NonNull View itemView) {
             super(itemView);
             tvTenSP = itemView.findViewById(R.id.tvTenSP);
@@ -61,7 +77,9 @@ public class SanPhamAdapter extends FirestoreRecyclerAdapter<SanPham, SanPhamAda
             tvMoTaSP = itemView.findViewById(R.id.tvMoTaSP);
             tvHangSP = itemView.findViewById(R.id.tvHangSP);
             tvTimeStamp = itemView.findViewById(R.id.tvTimestamp);
+
         }
     }
+
 }
 //123

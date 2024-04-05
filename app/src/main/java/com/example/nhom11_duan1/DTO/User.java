@@ -1,26 +1,42 @@
 package com.example.nhom11_duan1.DTO;
 
 public class User {
-    private String Email;
-    private String Pass;
     private String ten;
+    private String id;
+    private String phone;
+    private String adress;
 
-    public String getEmail() {
-        return Email;
+    public User(String ten, String id, String phone, String adress) {
+        this.ten = ten;
+        this.id = id;
+        this.phone = phone;
+        this.adress = adress;
     }
 
-    public void setEmail(String email) {
-        this.Email = email;
+    public String getPhone() {
+        return phone;
     }
 
-    public String getPass() {
-        return Pass;
+    public void setPhone(String phone) {
+        this.phone = phone;
     }
 
-    public void setPass(String pass) {
-        this.Pass = pass;
+    public String getAdress() {
+        return adress;
     }
 
+    public void setAdress(String adress) {
+        this.adress = adress;
+    }
+
+
+    public String getId() {
+        return id;
+    }
+
+    public void setId(String id) {
+        this.id = id;
+    }
     public String getTen() {
         return ten;
     }
@@ -32,9 +48,4 @@ public class User {
     public User() {
     }
 
-    public User(String email, String pass, String ten) {
-        this.Email = email;
-        this.Pass = pass;
-        this.ten = ten;
-    }
 }
