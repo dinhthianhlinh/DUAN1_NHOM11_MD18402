@@ -77,7 +77,6 @@ public class fragment_QuanLyDanhMuc extends Fragment {
                 getActivity().startActivity(intent);
             }
         });
-
         return view;
     }
 }

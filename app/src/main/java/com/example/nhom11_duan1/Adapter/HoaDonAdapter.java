@@ -1,6 +1,7 @@
 package com.example.nhom11_duan1.Adapter;
 
 import android.content.Context;
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -9,25 +10,42 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.example.nhom11_duan1.DTO.HoaDon;
+import com.example.nhom11_duan1.DTO.HoaDonChiTiet;
+import com.example.nhom11_duan1.HoaDonChiTietActivity;
 import com.example.nhom11_duan1.R;
+import com.example.nhom11_duan1.Utility;
 import com.firebase.ui.firestore.FirestoreRecyclerAdapter;
 import com.firebase.ui.firestore.FirestoreRecyclerOptions;
 
-public class HoaDonAdapter extends FirestoreRecyclerAdapter<HoaDon, HoaDonAdapter.HoaDonHolder> {
-   Context context;
-    public HoaDonAdapter(@NonNull FirestoreRecyclerOptions<HoaDon> options,Context context) {
+public class HoaDonAdapter extends FirestoreRecyclerAdapter<HoaDonChiTiet, HoaDonAdapter.HoaDonHolder> {
+    Context context;
+    public HoaDonAdapter(@NonNull FirestoreRecyclerOptions<HoaDonChiTiet> options, Context context) {
         super(options);
         this.context = context;
     }
-
+    //123
     @Override
-    protected void onBindViewHolder(@NonNull HoaDonHolder holder, int position, @NonNull HoaDon model) {
-        holder.tvTenKH.setText(model.tenKH);
-        holder.tvTenSP.setText(model.tenSP);
-        holder.tvGiaSP.setText(String.valueOf(model.giaSP));
-        holder.tvMoTaSP.setText(String.valueOf(model.soLuongSP));
+    protected void onBindViewHolder(@NonNull HoaDonHolder holder, int position, @NonNull HoaDonChiTiet model) {
+        holder.tvTenSP.setText(model.tenKH);
+        holder.tvGiaSP.setText(String.valueOf(model.phone));
+        holder.tvMoTaSP.setText(model.adress);
         holder.tvTongtien.setText(String.valueOf(model.tongTienSP));
+        holder.tvTenKH.setText(Utility.timestampToString(model.timestamp));
+        holder.tvidHoaDon.setText(model.idDonHang);
+        holder.itemView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(context, HoaDonChiTietActivity.class);
+
+                // Chuyển dữ liệu của sản phẩm được chọn qua Intent
+                intent.putExtra("GioHang", model);
+                String docID = getSnapshots().getSnapshot(position).getId();
+                intent.putExtra("docID",docID);
+
+                // Mở Activity chi tiết sản phẩm
+                context.startActivity(intent);
+            }
+        });
     }
 
     @NonNull
@@ -38,7 +56,7 @@ public class HoaDonAdapter extends FirestoreRecyclerAdapter<HoaDon, HoaDonAdapte
     }
 
     public class HoaDonHolder extends RecyclerView.ViewHolder {
-        TextView tvTenSP, tvGiaSP, tvMoTaSP, tvTongtien,tvTenKH;
+        TextView tvTenSP, tvGiaSP, tvMoTaSP, tvTongtien,tvTenKH,tvTimeStamp,tvidHoaDon;
 
         public HoaDonHolder(@NonNull View itemView) {
             super(itemView);
@@ -47,6 +65,8 @@ public class HoaDonAdapter extends FirestoreRecyclerAdapter<HoaDon, HoaDonAdapte
             tvMoTaSP = itemView.findViewById(R.id.tvMoTaSP);
             tvTongtien = itemView.findViewById(R.id.tvTongTien);
             tvTenKH = itemView.findViewById(R.id.tvTenKH);
+            tvTimeStamp = itemView.findViewById(R.id.tvTimeStamp);
+            tvidHoaDon = itemView.findViewById(R.id.tvidHoaDon);
         }
     }
 }

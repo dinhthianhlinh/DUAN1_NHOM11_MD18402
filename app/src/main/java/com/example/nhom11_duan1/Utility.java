@@ -51,14 +51,6 @@ public class Utility {
     public static CollectionReference AllUser(){
         return FirebaseFirestore.getInstance().collection("users");
     }
-    public static CollectionReference HoaDon(){
-        FirebaseUser firebaseUser = FirebaseAuth.getInstance().getCurrentUser();
-        return FirebaseFirestore.getInstance().collection("Hoa Don")
-                .document(firebaseUser.getUid()).collection("HoaDon Cua Toi");
-    }
-    public static CollectionReference HoaDon1(){
-        return FirebaseFirestore.getInstance().collection("Hoa Don 1");
-    }
     public static void setAnh(Context context, Uri imgUri, ImageView imageView){
         Glide.with(context).load(imgUri).apply(RequestOptions.circleCropTransform()).into(imageView);
     }
@@ -68,5 +60,13 @@ public class Utility {
     }
     public static StorageReference layAnhKhac(String anhkhac){
         return FirebaseStorage.getInstance().getReference().child("imgAnhSanPham").child(anhkhac);
+    }
+    public static CollectionReference HoaDon1(){
+        FirebaseUser firebaseUser = FirebaseAuth.getInstance().getCurrentUser();
+        return FirebaseFirestore.getInstance().collection("Hoa Don 1");
+    }
+    public static CollectionReference HoaDonChiTiet1(){
+        FirebaseUser firebaseUser = FirebaseAuth.getInstance().getCurrentUser();
+        return FirebaseFirestore.getInstance().collection("Hoa Don Chi Tiet 1");
     }
 }

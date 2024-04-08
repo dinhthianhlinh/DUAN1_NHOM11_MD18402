@@ -5,14 +5,17 @@ public class User {
     private String id;
     private String phone;
     private String adress;
+    private String email;
 
-    public User(String ten, String id, String phone, String adress) {
+    public User(String ten, String id, String phone, String adress, String email) {
         this.ten = ten;
         this.id = id;
         this.phone = phone;
         this.adress = adress;
+        this.email = email;
     }
 
+    //123
     public String getPhone() {
         return phone;
     }
