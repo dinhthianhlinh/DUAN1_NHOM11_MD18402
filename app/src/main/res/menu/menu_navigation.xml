@@ -15,9 +15,6 @@
         android:icon="@drawable/four"
         android:title="Quản Lý Đơn Hàng"/>
 
-    <item android:id="@+id/quanLyDanhSach"
-        android:icon="@drawable/five"
-        android:title="Quản Lý Danh Sách Đánh Giá "/>
 
     <item android:id="@+id/quanLyDanhMuc"
         android:icon="@drawable/six"

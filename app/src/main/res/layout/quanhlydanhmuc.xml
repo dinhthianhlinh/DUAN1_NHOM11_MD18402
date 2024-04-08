@@ -11,41 +11,51 @@
         android:orientation="horizontal"
         android:gravity="center"
         android:paddingBottom="100dp">
-        <ImageView
-            android:layout_width="100dp"
-            android:layout_height="100dp"
-            android:src="@drawable/samsung_icon"
-            android:id="@+id/imgSamSung"
-            android:layout_marginRight="30dp"/>
-        <ImageView
-            android:layout_width="120dp"
-            android:layout_height="120dp"
-            android:src="@drawable/icon_xiaomi"
-            android:id="@+id/imgXiaoMi"
-            android:layout_marginLeft="30dp"
-            />
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+            <ImageView
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:src="@drawable/samsung_icon"
+                android:id="@+id/imgSamSung"
+                android:layout_marginRight="30dp"/>
+            <TextView
+                android:layout_marginRight="10dp"
+                android:layout_gravity="center"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="SamSung"
+                android:textSize="25dp"
+                android:textStyle="bold">
 
-    </LinearLayout>
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:gravity="center"
-        android:paddingBottom="100dp"
-        >
-        <ImageView
-            android:layout_width="100dp"
-            android:layout_height="100dp"
-            android:src="@drawable/icon_apple"
-            android:id="@+id/imgApple"
-            android:layout_marginRight="30dp"/>
-        <ImageView
-            android:layout_width="120dp"
-            android:layout_height="120dp"
-            android:src="@drawable/icon_asus"
-            android:id="@+id/imgAsus"
-            android:layout_marginLeft="30dp"
-            />
+            </TextView>
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+            <ImageView
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:src="@drawable/icon_xiaomi"
+                android:id="@+id/imgXiaoMi"
+                android:layout_marginLeft="30dp"
+                />
+            <TextView
+                android:layout_marginLeft="15dp"
+                android:layout_gravity="center"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Xiaomi"
+                android:textSize="25dp"
+                android:textStyle="bold">
+
+            </TextView>
+        </LinearLayout>
+
+
 
     </LinearLayout>
     <LinearLayout
@@ -54,19 +64,104 @@
         android:orientation="horizontal"
         android:gravity="center"
         android:paddingBottom="100dp">
-        <ImageView
-            android:layout_width="100dp"
-            android:layout_height="100dp"
-            android:src="@drawable/icon_oppo"
-            android:id="@+id/imgOppo"
-            android:layout_marginRight="30dp"/>
-        <ImageView
-            android:layout_width="120dp"
-            android:layout_height="120dp"
-            android:src="@drawable/icon_realme"
-            android:id="@+id/imgRealMe"
-            android:layout_marginLeft="30dp"
-            />
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+            <ImageView
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:src="@drawable/icon_apple"
+                android:id="@+id/imgApple"
+                android:layout_marginRight="30dp"/>
+            <TextView
+                android:layout_gravity="center"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Apple"
+                android:layout_marginRight="15dp"
+                android:textSize="25dp"
+                android:textStyle="bold">
+
+            </TextView>
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+            <ImageView
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:src="@drawable/icon_asus"
+                android:id="@+id/imgAsus"
+                android:layout_marginLeft="30dp"
+                />
+            <TextView
+                android:layout_marginLeft="15dp"
+                android:layout_gravity="center"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Asus"
+                android:textSize="25dp"
+                android:textStyle="bold">
+
+            </TextView>
+        </LinearLayout>
+
+
+
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center"
+        android:paddingBottom="100dp">
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+            <ImageView
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:src="@drawable/icon_oppo"
+                android:id="@+id/imgOppo"
+                android:layout_marginRight="30dp"/>
+            <TextView
+                android:layout_marginRight="15dp"
+                android:layout_gravity="center"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Oppo"
+                android:textSize="25dp"
+                android:textStyle="bold">
+
+            </TextView>
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+            <ImageView
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:src="@drawable/icon_realme"
+                android:id="@+id/imgRealMe"
+                android:layout_marginLeft="30dp"
+                />
+            <TextView
+                android:layout_marginLeft="15dp"
+                android:layout_gravity="center"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Realme"
+                android:textSize="25dp"
+                android:textStyle="bold">
+
+            </TextView>
+        </LinearLayout>
+
+
 
     </LinearLayout>
 

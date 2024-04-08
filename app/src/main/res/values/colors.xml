@@ -5,4 +5,6 @@
     <color name="login">#aac389</color>
     <color name="skyBlue">#58C4F1</color>
     <color name="backgroundwelcome">#FFD5D6D6</color>
+    <color name="user">#D13F11</color>
+    <color name="danhmuc">#0AC3B2</color>
 </resources>

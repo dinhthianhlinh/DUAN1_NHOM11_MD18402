@@ -27,6 +27,7 @@ public class UserApdater extends FirestoreRecyclerAdapter<User,UserApdater.UserV
         holder.tvUser.setText(model.getTen());
         holder.tvEmail.setText(model.getPhone());
         holder.tvPass.setText(model.getAdress());
+        holder.tvEmail1.setText(model.getEmail());
 
     }
 
@@ -38,12 +39,13 @@ public class UserApdater extends FirestoreRecyclerAdapter<User,UserApdater.UserV
     }
 
     class UserViewHolder extends RecyclerView.ViewHolder {
-        TextView tvUser, tvEmail, tvPass;
+        TextView tvUser, tvEmail, tvPass,tvEmail1;
         public UserViewHolder(@NonNull View itemView) {
             super(itemView);
             tvUser = itemView.findViewById(R.id.tvTenNguoiDung);
             tvEmail = itemView.findViewById(R.id.tvEmailNguoiDung);
             tvPass = itemView.findViewById(R.id.tvPassNguoiDung);
+            tvEmail1 =itemView.findViewById(R.id.tvEmail);
         }
     }
 }

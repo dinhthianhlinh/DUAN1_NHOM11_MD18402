@@ -36,7 +36,6 @@ public class fragment_QuanLyDonHang extends Fragment {
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment__quan_ly_don_hang,container,false);
         recyclerView = view.findViewById(R.id.rcyView);
-        TextView tvEmail = view.findViewById(R.id.tvEmail1);
 
         tvChoXacNhan = view.findViewById(R.id.tvChoXacNhan);
         tvDangGiao = view.findViewById(R.id.tvDangGiao);

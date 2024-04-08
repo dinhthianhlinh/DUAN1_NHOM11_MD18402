@@ -35,6 +35,11 @@ public class trangchumenu extends AppCompatActivity {
         setSupportActionBar(toolbar);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         getSupportActionBar().setHomeAsUpIndicator(R.drawable.ic_menu);
+        Fragment defaultFragment = new fragment_QuanLySanPham();
+        getSupportFragmentManager()
+                .beginTransaction()
+                .replace(R.id.linearlayout, defaultFragment)
+                .commit();
 
         // nhan navigation
         navigationView.setNavigationItemSelectedListener(new NavigationView.OnNavigationItemSelectedListener() {
@@ -51,8 +56,6 @@ public class trangchumenu extends AppCompatActivity {
                     fragment = new fragment_ThongKe();
                 } else if (item.getItemId() == R.id.quanLyDonHang) {
                     fragment = new fragment_QuanLyDonHang();
-                } else if (item.getItemId() == R.id.quanLyDanhSach) {
-                    fragment = new fragment_QuanLyDanhSach();
                 } else if (item.getItemId() == R.id.quanLyDanhMuc) {
                     fragment = new fragment_QuanLyDanhMuc();
                 } else {
@@ -65,13 +68,6 @@ public class trangchumenu extends AppCompatActivity {
                         .commit();
 
                 drawerLayout.closeDrawer(GravityCompat.START); // Đóng thanh bar sau khi chọn mục menu
-
-
-//                getSupportFragmentManager()
-//                        .beginTransaction()
-//                        .replace(R.id.linearlayout,fragment)
-//                        .commit();
-
 
                 return false;
             }

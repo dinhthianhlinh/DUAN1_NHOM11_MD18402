@@ -29,7 +29,7 @@
         <TextView
             android:id="@+id/tvTenSP"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="50dp"
             android:text="Tên Sản Phẩm"
             android:textColor="#EDEDED"
             android:textSize="20sp"
@@ -48,7 +48,7 @@
         <TextView
             android:id="@+id/tvGiaSP"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="50dp"
             android:text="Giá Sản Phẩm"
             android:textSize="20sp"
             android:background="@drawable/vientron2"
@@ -66,7 +66,7 @@
         <TextView
             android:id="@+id/tvMoTaSP"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="50dp"
             android:text="Mô Tả Sản Phẩm"
             android:textSize="20sp"
             android:background="@drawable/vientron2"
@@ -84,7 +84,7 @@
         <TextView
             android:id="@+id/tvHangSP"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="50dp"
             android:text="Hãng Sản Phẩm"
             android:textSize="20sp"
             android:background="@drawable/vientron2"
@@ -102,7 +102,7 @@
         <TextView
             android:id="@+id/tvTimestamp"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="50dp"
             android:text="thoi gian mua"
             android:textSize="20sp"
             android:background="@drawable/vientron2"
