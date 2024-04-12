@@ -24,6 +24,7 @@ import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.firestore.CollectionReference;
 import com.google.firebase.firestore.DocumentReference;
+import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.Query;
 import com.google.firebase.firestore.QueryDocumentSnapshot;
 import com.google.firebase.firestore.QuerySnapshot;
@@ -51,142 +52,59 @@ public class HoaDonChiTietActivity extends AppCompatActivity {
         btnHuy = findViewById(R.id.btnHuy);
         tvTongTienThanhToan = findViewById(R.id.tvTongTienThanhToan);
         String docID = getIntent().getStringExtra("docID");
-        CollectionReference userDocumentRef = Utility.HoaDonChiTiet1();
-
-        userDocumentRef.get().addOnSuccessListener(new OnSuccessListener<QuerySnapshot>() {
-            @Override
-            public void onSuccess(QuerySnapshot queryDocumentSnapshots) {
-                for (QueryDocumentSnapshot documentSnapshot : queryDocumentSnapshots) {
-                    if (documentSnapshot.exists()) {
-
-                        String userData = documentSnapshot.getString("trangThai"); // Thay "fieldName" bằng tên trường cần lấy dữ liệu
-                        if (userData.equals("Chờ Xác Nhận")){
-                            btnHuy.setText("Đang Giao");
-                            btnHuy.setOnClickListener(new View.OnClickListener() {
-                                @Override
-                                public void onClick(View v) {
-                                    DocumentReference documentReference = Utility.HoaDonChiTiet1().document(docID);
-                                    documentReference.update("trangThai","Đang Giao").addOnCompleteListener(new OnCompleteListener<Void>() {
-                                        @Override
-                                        public void onComplete(@NonNull Task<Void> task) {
-                                            if(task.isSuccessful());
-                                            Toast.makeText(HoaDonChiTietActivity.this, "Đang Giao", Toast.LENGTH_SHORT).show();
-//                                            Intent intent = new Intent(HoaDonChiTietActivity.this, .class);
-//                                            startActivity(intent);
-                                        }
-                                    });
-                                }
-                            });
+        DocumentReference documentReference = Utility.HoaDonChiTiet1().document(docID);
+        documentReference.get().addOnSuccessListener(new OnSuccessListener<DocumentSnapshot>() {
+                    @Override
+                    public void onSuccess(DocumentSnapshot documentSnapshot) {
+                        if (documentSnapshot.exists()) {
+                            String userData = documentSnapshot.getString("trangThai"); // Thay "fieldName" bằng tên trường cần lấy dữ liệu
+                            if (userData.equals("Chờ Xác Nhận")) {
+                                btnHuy.setVisibility(View.VISIBLE);
+                                btnHuy.setText("Đang Giao");
+                                btnHuy.setOnClickListener(new View.OnClickListener() {
+                                    @Override
+                                    public void onClick(View v) {
+                                        documentReference.update("trangThai", "Đang Giao").addOnCompleteListener(new OnCompleteListener<Void>() {
+                                            @Override
+                                            public void onComplete(@NonNull Task<Void> task) {
+                                                if (task.isSuccessful()) {
+                                                    Toast.makeText(HoaDonChiTietActivity.this, "Đang Giao Đơn Hàng", Toast.LENGTH_SHORT).show();
+                                                    Intent intent = new Intent(HoaDonChiTietActivity.this, trangchumenu.class);
+                                                    startActivity(intent);
+                                                }
+                                            }
+                                        });
+                                    }
+                                });
+                            } else if (userData.equals("Đã Giao")) {
+                                btnHuy.setVisibility(View.GONE);
+                            } else if (userData.equals("Đã Hủy")) {
+                                btnHuy.setVisibility(View.GONE);
+                            } else if (userData.equals("Đang Giao")) {
+                                btnHuy.setVisibility(View.VISIBLE);
+                                btnHuy.setText("Đã Nhận");
+                                btnHuy.setOnClickListener(new View.OnClickListener() {
+                                    @Override
+                                    public void onClick(View v) {
+                                        documentReference.update("trangThai", "Đã Giao").addOnCompleteListener(new OnCompleteListener<Void>() {
+                                            @Override
+                                            public void onComplete(@NonNull Task<Void> task) {
+                                                if (task.isSuccessful()) {
+                                                    Toast.makeText(HoaDonChiTietActivity.this, "Đã Nhận Đơn Hàng", Toast.LENGTH_SHORT).show();
+                                                    Intent intent = new Intent(HoaDonChiTietActivity.this, trangchumenu.class);
+                                                    startActivity(intent);
+                                                }
+                                            }
+                                        });
+                                    }
+                                });
+                            }
+                        } else {
+                            // Tài liệu không tồn tại
                         }
-
-
-                    } else {
-                        // Tài liệu không tồn tại
-
                     }
-                }
-
-            }
-        }).addOnFailureListener(new OnFailureListener() {
-            @Override
-            public void onFailure(@NonNull Exception e) {
-                // Xử lý lỗi khi truy vấn dữ liệu
-
-            }
-        });
-        userDocumentRef.get().addOnSuccessListener(new OnSuccessListener<QuerySnapshot>() {
-            @Override
-            public void onSuccess(QuerySnapshot queryDocumentSnapshots) {
-                int totalTongTien = 0;
-                for (QueryDocumentSnapshot documentSnapshot : queryDocumentSnapshots) {
-                    if (documentSnapshot.exists()) {
-
-                        String userData = documentSnapshot.getString("trangThai"); // Thay "fieldName" bằng tên trường cần lấy dữ liệu
-                        if (userData.equals("Đang Giao")){
-                            btnHuy.setText("Đã Giao");
-                            btnHuy.setOnClickListener(new View.OnClickListener() {
-                                @Override
-                                public void onClick(View v) {
-                                    DocumentReference documentReference = Utility.HoaDonChiTiet1().document(docID);
-                                    documentReference.update("trangThai","Đã Giao").addOnCompleteListener(new OnCompleteListener<Void>() {
-                                        @Override
-                                        public void onComplete(@NonNull Task<Void> task) {
-                                            if(task.isSuccessful());
-                                            Toast.makeText(HoaDonChiTietActivity.this, "Đã Giao", Toast.LENGTH_SHORT).show();
-//                                            Intent intent = new Intent(HoaDonChiTietActivity.this, fragment_QuanLyDonHang.class);
-//                                            startActivity(intent);
-                                        }
-                                    });
-                                }
-                            });
-                        }
-                    } else {
-                        // Tài liệu không tồn tại
-
-                    }
-                }
-
-            }
-        }).addOnFailureListener(new OnFailureListener() {
-            @Override
-            public void onFailure(@NonNull Exception e) {
-                // Xử lý lỗi khi truy vấn dữ liệu
-
-            }
-        });
-        userDocumentRef.get().addOnSuccessListener(new OnSuccessListener<QuerySnapshot>() {
-            @Override
-            public void onSuccess(QuerySnapshot queryDocumentSnapshots) {
-                int totalTongTien = 0;
-                for (QueryDocumentSnapshot documentSnapshot : queryDocumentSnapshots) {
-                    if (documentSnapshot.exists()) {
-
-                        String userData = documentSnapshot.getString("trangThai"); // Thay "fieldName" bằng tên trường cần lấy dữ liệu
-                        if (userData.equals("Đã Giao")){
-                            btnHuy.setVisibility(View.GONE);
-                        }
-                    } else {
-                        // Tài liệu không tồn tại
-
-                    }
-                }
-
-            }
-        }).addOnFailureListener(new OnFailureListener() {
-            @Override
-            public void onFailure(@NonNull Exception e) {
-                // Xử lý lỗi khi truy vấn dữ liệu
-
-            }
-        });
-        userDocumentRef.get().addOnSuccessListener(new OnSuccessListener<QuerySnapshot>() {
-            @Override
-            public void onSuccess(QuerySnapshot queryDocumentSnapshots) {
-                int totalTongTien = 0;
-                for (QueryDocumentSnapshot documentSnapshot : queryDocumentSnapshots) {
-                    if (documentSnapshot.exists()) {
-
-                        String userData = documentSnapshot.getString("trangThai"); // Thay "fieldName" bằng tên trường cần lấy dữ liệu
-                        if (userData.equals("Đã Hủy")){
-                            btnHuy.setVisibility(View.GONE);
-                        }
-                    } else {
-                        // Tài liệu không tồn tại
-
-                    }
-                }
-
-            }
-        }).addOnFailureListener(new OnFailureListener() {
-            @Override
-            public void onFailure(@NonNull Exception e) {
-                // Xử lý lỗi khi truy vấn dữ liệu
-
-            }
-        });
-
-
-        img_backTo_hdct.setOnClickListener(new View.OnClickListener() {
+                });
+                img_backTo_hdct.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 onBackPressed();
@@ -225,6 +143,13 @@ public class HoaDonChiTietActivity extends AppCompatActivity {
         } else {
             // Intent không chứa đối tượng SanPham, xử lý lỗi ở đây
             Toast.makeText(this, "Intent không có đối tượng sản phẩm", Toast.LENGTH_SHORT).show();
+        }
+    }
+    void changeInprogress(boolean inProgress){
+        if(inProgress){
+            btnHuy.setVisibility(View.VISIBLE);
+        }else{
+            btnHuy.setVisibility(View.GONE);
         }
     }
 }
