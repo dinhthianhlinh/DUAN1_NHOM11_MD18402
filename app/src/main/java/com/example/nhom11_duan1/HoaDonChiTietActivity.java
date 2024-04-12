@@ -56,7 +56,6 @@ public class HoaDonChiTietActivity extends AppCompatActivity {
         userDocumentRef.get().addOnSuccessListener(new OnSuccessListener<QuerySnapshot>() {
             @Override
             public void onSuccess(QuerySnapshot queryDocumentSnapshots) {
-                int totalTongTien = 0;
                 for (QueryDocumentSnapshot documentSnapshot : queryDocumentSnapshots) {
                     if (documentSnapshot.exists()) {
 

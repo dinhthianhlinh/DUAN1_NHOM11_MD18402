@@ -41,6 +41,13 @@ public class fragment_QuanLyDonHang extends Fragment {
         tvDangGiao = view.findViewById(R.id.tvDangGiao);
         tvDaGiao = view.findViewById(R.id.tvDaGiao);
         tvDaHuy = view.findViewById(R.id.tvDaHuy);
+        Query query = Utility.HoaDonChiTiet1().whereEqualTo("trangThai", "Chờ Xác Nhận");
+        FirestoreRecyclerOptions<HoaDonChiTiet> options = new FirestoreRecyclerOptions.Builder<HoaDonChiTiet>()
+                .setQuery(query, HoaDonChiTiet.class).build();
+        recyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
+        adapter = new HoaDonAdapter(options, getContext());
+        recyclerView.setAdapter(adapter);
+        adapter.startListening();
 
         tvChoXacNhan.setOnClickListener(new View.OnClickListener() {
             @Override
