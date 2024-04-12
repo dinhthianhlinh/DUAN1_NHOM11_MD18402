@@ -7,13 +7,15 @@
     android:orientation="vertical">
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="220dp"
         android:orientation="horizontal"
         android:gravity="center"
-        android:paddingBottom="100dp">
+        android:layout_margin="10dp"
+        >
         <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginRight="20dp"
             android:orientation="vertical">
             <ImageView
                 android:layout_width="100dp"
@@ -60,13 +62,15 @@
     </LinearLayout>
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="220dp"
         android:orientation="horizontal"
         android:gravity="center"
-        android:paddingBottom="100dp">
+        android:layout_margin="10dp"
+        >
         <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginRight="20dp"
             android:orientation="vertical">
             <ImageView
                 android:layout_width="100dp"
@@ -107,19 +111,18 @@
 
             </TextView>
         </LinearLayout>
-
-
-
     </LinearLayout>
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="220dp"
         android:orientation="horizontal"
         android:gravity="center"
-        android:paddingBottom="100dp">
+        android:layout_margin="10dp"
+        >
         <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginRight="20dp"
             android:orientation="vertical">
             <ImageView
                 android:layout_width="100dp"

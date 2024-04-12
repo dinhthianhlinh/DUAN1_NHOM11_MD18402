@@ -5,81 +5,76 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:background="@drawable/may"
+    android:background="@color/white"
     android:gravity="center"
     >
 
-        <ImageView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:src="@drawable/slplogo"
-            android:layout_gravity="center"
-            android:padding="20dp"/>
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Login now to experience"
-            android:textStyle="bold"
-            android:textSize="20sp"
-            android:textColor="#F49F21"
-            android:layout_marginTop="20dp"
-            android:layout_marginBottom="40dp"/>
-
-        <com.google.android.material.textfield.TextInputLayout
-            android:id="@+id/txtEmail"
+        <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="20dp"
-            android:layout_marginEnd="20dp">
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:gravity="center"
+            >
+                <ImageView
+                    android:layout_width="200dp"
+                    android:layout_height="200dp"
+                    android:src="@drawable/anh"
+                    android:layout_gravity="center">
 
-                <com.google.android.material.textfield.TextInputEditText
-                    android:id="@+id/edtEmail"
-                    android:layout_width="match_parent"
+                </ImageView>
+                <TextView
+                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:hint="Nhập Email"
-                    android:background="@drawable/vientron2"
-                    android:textStyle="bold"/>
-        </com.google.android.material.textfield.TextInputLayout>
-
-        <com.google.android.material.textfield.TextInputLayout
-            android:id="@+id/txtPass"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="20dp"
-            android:layout_marginEnd="20dp"
-            android:layout_marginTop="10dp">
-
-                <com.google.android.material.textfield.TextInputEditText
-                    android:id="@+id/edtPass"
-                    android:layout_width="match_parent"
+                    android:text="Đăng Nhập Ngay Để Trải Nghiệm"
+                    android:textSize="20dp">
+                </TextView>
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/txtEmail"
+                    android:layout_width="390dp"
+                    android:layout_height="wrap_content">
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:id="@+id/edtEmail"
+                            android:layout_width="390dp"
+                            android:layout_height="wrap_content"
+                            android:hint="Nhập Email"/>
+                </com.google.android.material.textfield.TextInputLayout>
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/txtPass"
+                    android:layout_width="390dp"
+                    android:layout_height="wrap_content">
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:id="@+id/edtPass"
+                            android:layout_width="390dp"
+                            android:layout_height="wrap_content"
+                            android:hint="Nhập password"
+                            android:password="true"/>
+                </com.google.android.material.textfield.TextInputLayout>
+                <CheckBox
+                    android:id="@+id/cboRemember"
+                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:hint="Nhập password"
-                    android:background="@drawable/vientron2"
-                    android:password="true"
-                    android:textStyle="bold"/>
-        </com.google.android.material.textfield.TextInputLayout>
-
-        <CheckBox
-            android:id="@+id/cboRemember"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Remember Me"
-            android:textColor="#D12E22"
-            android:layout_marginStart="20dp"
-            android:layout_marginTop="10dp"/>
-
-        <Button
-            android:id="@+id/btnLogin"
-            android:layout_width="150dp"
-            android:layout_height="wrap_content"
-            android:text="Đăng Nhập"
-            android:textColor="#FFFFFF"
-
-            android:textStyle="bold"
-            android:backgroundTint="#6AB9DD"
-            android:layout_marginStart="20dp"
-            android:layout_marginEnd="20dp"
-            android:layout_marginTop="20dp"/>
+                    android:layout_gravity="left"
+                    android:text="Remember Me" >
+                </CheckBox>
+                <Button
+                    android:id="@+id/btnLogin"
+                    android:layout_width="380dp"
+                    android:layout_height="wrap_content"
+                    android:backgroundTint="@color/dangnhap"
+                    android:text="Đăng Nhập">
+                </Button>
+                <TextView
+                    android:id="@+id/tvQuenMK"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Bạn Không Nhớ Mật Khẩu ?">
+                </TextView>
+                <TextView
+                    android:id="@+id/tvDangKy"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Bạn Chưa Có Tài Khoản ?">
+                </TextView>
+        </LinearLayout>
 
 </LinearLayout>

@@ -170,9 +170,11 @@
     <Button
         android:layout_below="@+id/ln1111"
         android:id="@+id/btnHuy"
+        android:layout_marginTop="20dp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
+        android:backgroundTint="#39A3F3"
         android:text="Hủy"/>
 
 </LinearLayout>
